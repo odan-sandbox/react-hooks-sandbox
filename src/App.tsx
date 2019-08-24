@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from 'react'
 
 import { CountContext } from "./CountContext"
 import LocalCounter from "./LocalCounter"
