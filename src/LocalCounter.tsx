@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useCounter } from "./Hooks"
 
 const LocalCounter: React.FC = () => {
-    const [count, setCount] = useState(0); 
+    const {count, increment} = useCounter(); 
     return (
         <div>
             <p>count: {count}</p>
-            <button onClick={() => setCount(count + 1)}>
+            <button onClick={() => increment()}>
                 increment
             </button>
         </div>
