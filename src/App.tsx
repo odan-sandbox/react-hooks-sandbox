@@ -1,12 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import { CountContext } from "./CountContext"
 import LocalCounter from "./LocalCounter"
+import ContextCounter from "./ContextCounter"
 
 const App: React.FC = () => {
+  const [count, setCount] = useState(0)
   return (
-    <LocalCounter/>
+    <CountContext.Provider value={{value: count, increment: () => setCount(count + 1)}}>
+      <LocalCounter/>
+      <ContextCounter/>
+    </CountContext.Provider>
   );
 }
 
